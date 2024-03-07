@@ -99,10 +99,10 @@ git --help - sirve para saber los comandos existentes
 
 git checkout nos sirve para devolvernos a un estado anterior de un archvo, tambien para cambiar de ramas y para revisar versiones anteriores
 si quieres devolverte a un estado anterior debes usar:
-git checkout <nombre del archivo> de esta forma te devulve al anterior estado de es archivo 
+git checkout <nombre del archivo> de esta forma te devuelve al anterior estado del archivo 
 si quieres cambiar de rama:
 git checkout <nombre_rama> de esta forma cambias de rama
-si quieres revisar una version anterior
+si quieres revisar una version anterior/ commit
 git checkot <hash de la version> de esta forma revisas una version
 
 git reset - nos devuelve al ultimo commit hecho
