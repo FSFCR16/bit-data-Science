@@ -100,10 +100,76 @@ def bitExercise():
   else:
     print("No apto")
     
-bitExercise()
+# bitExer
     
+def bank():
+  accounts = [ 
+              ["Jhon Doe", 1000.0, "123456789"],
+              ["Jane Doe", 500.0, "987654321"],
+              ["Jin Smith", 2000.0, "111111111"]  
+                
+  ]
+  opciones = print("¿Que desea realizar? \n \
+      escoga 1 para: ver todas las cuentas de los clientes \n \
+      escoga 2 para: ver detalles de tu cuenta \n \
+      escoga 3 para: retirar dinero de tu cuenta \n \
+      escoga 4 para: depositar en tu cuenta \n \
+      escoga 5 para: salir del sistema \n \
+    ")
   
+  while True:
     
+    opcion = str(input(" Digite la opcion que desea: "))
+      
+    if(opcion == "1"):
+      for i in accounts:
+        print(f" Nombre: {i[0]} \n Saldo: {i[1]} \n N. Cuenta: {i[2]}")
+        print("---------------------------")
+        
+    elif(opcion == "2"):
+      numero_cuenta = str(input("Digite su numero de cuenta: "))
+      for i in accounts: 
+        if numero_cuenta == i[2]:
+          print(f"Nombre: {i[0]} \n Saldo: {i[1]} \n N. Cuenta: {i[2]}")
+          break
+        elif accounts.index(i) == len(accounts) - 1:
+          print("Numero de cuenta no existe")
+          
+    elif(opcion == "3"):
+      numero_cuenta = str(input("Digite su numero de cuenta: "))
+      for i in accounts: 
+        if numero_cuenta == i[2]:
+          valor_retirar = int(input("Ingresa el valor a retirar: "))
+
+          if((i[1] - valor_retirar) < 0):
+            print("No tienes fondos suficientes")
+            break
+            
+          else:
+            i[1] -= valor_retirar
+            print(f"Cantidad retirada: {valor_retirar} \n Saldo: {i[1]}")
+            break
+            
+        elif accounts.index(i) == len(accounts)-1:
+          print("Numero de cuenta no existe")
+          
+    elif(opcion == "4"):
+        numero_cuenta = str(input("Digite su numero de cuenta: "))
+        for i in accounts: 
+          if numero_cuenta == i[2]:
+            valor_depositar = int(input("Ingresa el valor a depositar: "))
+            i[1] += valor_depositar
+            print(f" Cantidad Depositada: {valor_depositar} \n Saldo: {i[1]}")
+            break
+            
+          elif accounts.index(i) == len(accounts) - 1:
+            print("Numero de cuenta no existe")
+            
+    elif(opcion == "5"):
+      print("Gracias por usar la aplicacion, hasta luego.")
+      break
     
-
-
+    else: 
+      print("Escoge una opcion correcta")
+      
+bank()
