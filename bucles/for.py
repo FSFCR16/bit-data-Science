@@ -49,3 +49,9 @@ d1 = {
 for i in d1:
   print(i)
   print(d1[i])
+
+### PRINT ###
+# Sirve para lleva run control de los log o bueno hacer log pero tambien recibe un segundo parametro que es el end que nos sirve para
+# determinar con que queremos que termine nuestro log
+
+print("Santiago ", end= "Fajardo")

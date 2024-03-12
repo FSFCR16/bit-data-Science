@@ -85,5 +85,25 @@ def porcentaje(maximo , minimo, promedio):
   print( f' mas lento:  {resultadosA["dm"]}% \n mas rapido: {resultadosA["dr"]}% \n promedio: {resultadosA["dp"]}%')
   print( f' en comparacion con el crudo promedio se redujo un: {resultadosB["crudoP"]}% \n en comparacion con el curso actual se redujo un: {resultadosB["crudoA"]}%')
   print( f' ver 10 horas de este curso equivale a {resultadosC}hrs')
+
+
+def bitExercise():
+  nombre =  str(input("Digite su nombre: "))
+  edad =  int(input("Digite su edad: "))
   
-porcentaje(maximo,minimo,promedio)
+  if (nombre[-1] in "aeiou") and (edad > 18):
+    print(" Es candidato a compra ")
+  
+  elif(nombre[-1] not in "aeiou" and (edad <= 18)):
+    print( "Es candidato por pariente ")
+    
+  else:
+    print("No apto")
+    
+bitExercise()
+    
+  
+    
+    
+
+
