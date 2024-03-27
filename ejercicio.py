@@ -1,3 +1,5 @@
+import re
+
 def squareUp(n):
     lista_final = []
 
@@ -172,4 +174,49 @@ def bank():
     else: 
       print("Escoge una opcion correcta")
       
-bank()
+# bank()
+
+def create_phone_number(n):
+  return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+create_phone_number([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+
+def order(sentence):
+  if(sentence == ""):
+    return ""
+  sentence_to_array = sentence.split(" ")
+  patron = re.compile(r'[0-9]')
+  
+  for i in range(0,2,1):
+    for y, x in enumerate(sentence_to_array):
+      numero = int(patron.search(x).group()) - 1 # El group devuelve el texto coincidente
+      
+      if(x == numero):
+        continue
+      else:
+        word = sentence_to_array[numero]
+        sentence_to_array[numero] = x
+        sentence_to_array[y] = word
+      
+  print(" ".join(sentence_to_array))
+order("4of Fo1r pe6ople g3ood th5e the2")
+
+
+def cakes(recipe, available):
+  if(len(recipe) > len(available)):
+    return 0
+  else:
+    lista = []
+    for i in recipe:
+      resultado = 0
+      if(i not in available or recipe[i] > available[i]):
+        return 0
+      else:
+        resultado = available[i] // recipe[i]
+        lista.append(resultado)
+
+    print(min(lista)) 
+        
+cakes({"apples": 3, "flour": 300, "sugar": 150, "milk": 100, "oil": 100}, {"sugar": 500, "flour": 2000, "milk": 2000})
+
+def cakes(recipe, available):
+	return min(available.get(k, 0)/recipe[k] for k in recipe)

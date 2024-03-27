@@ -17,7 +17,8 @@ for numero,animal in zip(animales,numeros):
     print(f"recorriendo lista 2: {animal}")
     
 
-#forma no optima de recorer una lista con su indice (no funciona en conjuntos)
+# forma no optima de recorer una lista con su indice (no funciona en conjuntos)
+# todo lo qye se colo que en el segundo argumento sera n= n-1
 for num in range(len(numeros)):
     print(numeros[num])
     

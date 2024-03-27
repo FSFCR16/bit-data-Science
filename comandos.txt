@@ -82,7 +82,6 @@ git config --global --list - listar las credenciales
 
 git config --list
 
-
 git branch --show-current - muestra la rama actual
 
 -m en git -m hace referencia a un mensaje m de mensaje, le estamos diciendo que vamos a mandar un mensaje
